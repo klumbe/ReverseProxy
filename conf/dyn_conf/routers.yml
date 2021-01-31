@@ -1,0 +1,9 @@
+http:
+        routers:
+                dashboard:
+                        rule: Host(`traefik.local.klumbe.net`)
+                        service: api@internal
+                        entrypoints: 
+                                - websecure
+                        middlewares:
+                                - traefik-auth
