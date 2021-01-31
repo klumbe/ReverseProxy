@@ -1,0 +1,36 @@
+entryPoints:
+        web:
+                address: ":80"
+                http:
+                        redirections:
+                                entryPoint: 
+                                        to: websecure
+                                        scheme: https
+                                        permanent: true
+
+        websecure:
+                address: ":443"
+                http:
+                        tls:
+                                certResolver: myresolver
+
+providers:
+        docker:
+                network: traefik-proxy
+                exposedByDefault: false
+
+        file:
+                directory: /etc/traefik/dyn_conf/
+                watch: true
+
+api:
+        dashboard: true
+        insecure: false
+
+certificatesResolvers:
+        myresolver:
+                acme:
+                        email: "mail@example.org"
+                        storage: "/letsencrypt/acme.json"
+                        httpChallenge:
+                                entryPoint: web

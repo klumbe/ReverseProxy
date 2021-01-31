@@ -1,0 +1,4 @@
+# Ignore the content of the current folder
+*
+# Except this file
+!.gitignore

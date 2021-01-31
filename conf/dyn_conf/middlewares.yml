@@ -1,0 +1,6 @@
+http:
+        middlewares:
+                traefik-auth:
+                        basicAuth:
+                                realm: traefik
+                                usersFile: /etc/traefik/auth/traefik_basic
