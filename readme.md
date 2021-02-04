@@ -44,7 +44,12 @@ HTTPS is enforced by using [Let's Encrypt](https://letsencrypt.org) with the HTT
     # htpasswd ./conf/auth/traefik_basic <username>
     ```
 
-3. Start the container in detached mode:
+3. Create the external docker network `traefik-external` through that Traefik can connect to the services:
+   ```bash
+   # sudo docker network create traefik-external
+   ```
+
+4. Start the container in detached mode:
    ```bash
    # sudo docker-compose up -d
    ```
