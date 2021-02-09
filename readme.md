@@ -43,13 +43,18 @@ HTTPS is enforced by using [Let's Encrypt](https://letsencrypt.org) with the HTT
     ```bash
     # htpasswd ./conf/auth/traefik_basic <username>
     ```
+3. Change the email-address used by Let's Encrypt in `conf/traefik.yaml` to your own:
+    ```
+	email: mail.example.org
+    ```
+    *This will probably be improved in a future commit.* 
 
-3. Create the external docker network `traefik-external` through that Traefik can connect to the services:
+4. Create the external docker network `traefik-external` through that Traefik can connect to the services:
    ```bash
    # sudo docker network create traefik-external
    ```
 
-4. Start the container in detached mode:
+5. Start the container in detached mode:
    ```bash
    # sudo docker-compose up -d
    ```
