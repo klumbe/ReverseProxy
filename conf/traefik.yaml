@@ -30,7 +30,7 @@ api:
 certificatesResolvers:
         myresolver:
                 acme:
-                        email: "mail@example.org"
+                        email: "mail.example.org"
                         storage: "/letsencrypt/acme.json"
                         httpChallenge:
                                 entryPoint: web
