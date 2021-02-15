@@ -11,6 +11,7 @@ services:
                         - /var/run/docker.sock:/var/run/docker.sock:ro
                         - ./conf/:/etc/traefik/
                         - ./letsencrypt:/letsencrypt
+                restart: unless-stopped
 
 networks:
         default:
